@@ -1,0 +1,34 @@
+1)Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+1a)SELECT COUNT(`prenotazioni_has_ospiti`.`ospite_id`) AS `tot_booking`,`prenotazioni_has_ospiti`.`ospite_id`,`ospiti`.`name`, `ospiti`.`lastname`
+FROM `prenotazioni_has_ospiti`
+INNER JOIN `ospiti`
+ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id`
+GROUP BY `prenotazioni_has_ospiti`.`ospite_id`
+HAVING COUNT(`prenotazioni_has_ospiti`.`ospite_id`) > 2;
+
+2)Stampare tutti gli ospiti per ogni prenotazione
+2a)
+SELECT `prenotazioni_has_ospiti`.`prenotazione_id`, `ospiti`.`id`, `ospiti`.`name`, `ospiti`.`lastname`
+FROM `prenotazioni_has_ospiti`
+INNER JOIN `ospiti`
+ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id`;
+
+3)Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
+3a)
+
+4)Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
+4a)
+
+5)Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+5a)
+
+
+BONUS:
+1)Conta gli ospiti raggruppandoli per anno di nascita
+1a)
+
+2)Somma i prezzi dei pagamenti raggruppandoli per status
+2a)
+
+3)Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
+3a)
